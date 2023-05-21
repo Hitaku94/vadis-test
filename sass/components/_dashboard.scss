@@ -1,0 +1,172 @@
+@use "../base/mixin" as *;
+@use "../base/variable" as *;
+@use "../base/base" as *;
+
+/*-----------*/
+/* DASHBOARD */
+/*-----------*/
+
+.dashboard-container {
+  @include border(1px solid white, 16px);
+  background: white;
+}
+
+.dashboard__container-header {
+  @include flex(space-between, center, row, 0);
+  padding: 1rem;
+  border-bottom: 2px solid $primary_background_color;
+}
+
+.dashboard__title {
+  @include secondary-font-family(600);
+}
+*
+
+/*---------------------*/
+/* DASHBOARD LEFT SIDE */
+/*---------------------*/
+
+.dashboard-left {
+  display: grid;
+  grid-template-columns: repeat(2, 49%);
+  grid-template-rows: repeat(32, auto);
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  align-items: start;
+  &__row {
+    @include flex(space-between, center, row, 0);
+    padding: 1rem;
+    border-bottom: 2px solid $primary_background_color;
+  }
+  &__item {
+    @include flex(space-between, center, row, 0.5rem);
+  }
+  &__row--left-flex {
+    @include flex(flex-start, center, row, 0.5rem);
+    padding: 1rem;
+  }
+  &__risk-profile {
+    position: relative;
+    grid-area: 1 / 1 / 8 / 3;
+  }
+  &__key-information {
+    grid-area: 8 / 1 / 22 / 1;
+  }
+  &__shareholders {
+    grid-area: 8 / 2 / 18 / 3;
+  }
+  &__headquarters {
+    grid-area: 18 / 2 / 30 / 3;
+  }
+  &__headquarters-info {
+    @include flex(center, flex-start, column, 0.5rem);
+    padding: 1rem;
+  }
+  &__headquarters-img {
+    width: 100%;
+  }
+  &__key-financial {
+    grid-area: 21 / 1 / 30 / 2;
+  }
+}
+
+/* risk profile graph */
+
+.risk-profile {
+  &__graph {
+    @include flex(space-around, center, row, 5rem);
+    padding: 1rem 5rem 0rem;
+    background: linear-gradient(white 80%, $primary_background_color);
+  }
+  &__graph-list {
+    @include flex(center, center, column, 0);
+  }
+  &__graph-item {
+    margin: 0.25rem 0;
+    padding: 0.5rem 1.5rem;
+    border-radius: 10px;
+    background: $empty_risk_color;
+  }
+  &__graph-tag-item {
+    @include border(1px solid $tab_selected_color, 11px);
+    padding: 0.1rem 0.3rem;
+    white-space: nowrap;
+    position: absolute;
+    bottom: 10%;
+    font-weight: bold;
+  }
+  &__graph-tag-list {
+    height: 4rem;
+  }
+}
+
+/* risk profile graph color */
+
+.high-risk {
+  color: $high_risk_color_name_tag;
+  border-color: $high_risk_color_name_tag;
+}
+
+.very_low_risk_color {
+  background: $very_low_risk_color;
+}
+
+.low_risk_color {
+  background: $low_risk_color;
+}
+
+.medium_risk_color {
+  background: $medium_risk_color;
+}
+
+.high_risk_color {
+  background: $high_risk_color;
+}
+
+/*----------------------*/
+/* DASHBOARD RIGHT SIDE */
+/*----------------------*/
+
+.dashboard-right {
+  width: 40%;
+  &__container {
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  &__container-desc {
+    font-weight: 600;
+    &--text {
+      text-align: center;
+      padding: 1rem;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+  }
+  &__icon-box {
+    @include flex(flex-start, center, row, 0.25rem);
+    @include border(1px solid $secondary_background_color, 0 0 16px 16px);
+    padding: 1rem;
+    background-color: $secondary_background_color;
+  }
+  &__btn-container {
+    @include flex(center, center, column, 1.5rem);
+    padding: 1rem;
+  }
+  &__btn {
+    @include flex(flex-start, center, row, 0);
+    @include border(none, 20px);
+    padding: 0.5rem;
+    white-space: nowrap;
+    width: 100%;
+    background: $primary_button_background_color;
+  }
+  &__btn-text {
+    @include secondary-font-family(600);
+    text-align: center;
+    width: 100%;
+    color: white;
+  }
+  &__desc {
+    font-weight: 600;
+  }
+}

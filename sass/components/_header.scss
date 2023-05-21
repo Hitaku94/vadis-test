@@ -1,0 +1,42 @@
+@use "../base/mixin" as *;
+@use "../base/variable" as *;
+@use "../base/base" as *;
+
+/* HEADER */
+
+.header {
+  &__navigation-path {
+    margin: 1rem 0 0.5rem;
+    font-size: 0.8rem;
+    display: block;
+  }
+  &__company-name {
+    @include secondary-font-family(bold);
+  }
+  &__tabs {
+    @include flex(space-between, center, row, 0);
+    margin-top: 1rem;
+  }
+  &__list {
+    @include flex(center, center, row, 0);
+  }
+  &__item {
+    padding: 0.5em 1em;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  &__item--active {
+    background-color: $tab_selected_color;
+  }
+  &__btn-div {
+    @include flex(center, center, row, 1rem);
+  }
+  &__btn {
+    @include flex(center, center, row, 1rem);
+    @include secondary-font-family(600);
+    @include border(1px solid $tab_selected_color, 50px);
+    padding: 0.5em 1em;
+    background-color: white;
+  }
+}

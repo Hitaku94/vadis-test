@@ -1,0 +1,45 @@
+@use "variable" as *;
+
+@mixin flex($justify, $align-items, $direction, $gap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align-items;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+@mixin absolute($position, $top, $left) {
+  position: $position;
+  top: $top;
+  left: $left;
+  transform: translate(-50%, -50%);
+}
+
+@mixin reset-list() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin reset-link() {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.836);
+}
+
+@mixin circle($height, $width, $border-color) {
+  width: $width;
+  height: $height;
+  border-color: $border-color;
+  border: 1px solid;
+  border-radius: 50%;
+}
+
+@mixin secondary-font-family($font-weight) {
+  font-family: $secondary_font-family;
+  font-weight: $font-weight;
+}
+
+@mixin border($border, $border-radius) {
+  border: $border;
+  border-radius: $border-radius;
+}

@@ -1,0 +1,34 @@
+@use "variable" as *;
+@use "mixin" as *;
+
+/*-----------*/
+/* css reset */
+/*-----------*/
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: $primary_font-family;
+}
+
+/* main element base */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+}
+
+li {
+  @include reset-list();
+}
+
+button {
+  cursor: pointer;
+}

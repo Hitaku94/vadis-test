@@ -1,0 +1,28 @@
+@use "../base/mixin" as *;
+@use "../base/variable" as *;
+@use "../base/base" as *;
+
+/*------------------------*/
+/*-- reusable css class --*/
+/*------------------------*/
+
+.belgium-flag {
+  @include flex(center, center, row, 0);
+  height: 1rem;
+  width: 2rem;
+  & > * {
+    width: 33%;
+    height: 100%;
+  }
+  &__color-line-black {
+    border-radius: 2px 0 0 2px;
+    background: #262626;
+  }
+  &__color-line-yellow {
+    background: #ffcf3c;
+  }
+  &__color-line-red {
+    border-radius: 0px 2px 2px 0px;
+    background: #ff4453;
+  }
+}

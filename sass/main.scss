@@ -1,0 +1,20 @@
+@use "base/variable" as *;
+@use "base/mixin" as *;
+@use "base/base" as *;
+@use "components/header" as *;
+@use "components/navbar" as *;
+@use "components/dashboard" as *;
+@use "components/circle" as *;
+@use "components/reusable" as *;
+
+.top-section {
+  margin: 1rem 2rem 0 2rem;
+}
+
+.bottom-section {
+  @include flex(space-around, flex-start, row, 3rem);
+  margin-top: 2rem;
+  padding: 1rem 2rem 0 2rem;
+  background-color: $primary_background_color;
+  height: 100%;
+}

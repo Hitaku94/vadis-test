@@ -1,0 +1,33 @@
+@use "../base/mixin" as *;
+@use "../base/variable" as *;
+@use "../base/base" as *;
+
+.nav-bar {
+  display: flex;
+  &__info {
+    @include flex(space-between, center, row, 0);
+    width: 100%;
+    margin-left: 1rem;
+  }
+  &__left-list {
+    @include flex(center, center, row, 0);
+  }
+  &__logo {
+    padding-right: 1rem;
+  }
+  &__left-item {
+    padding: 0 1rem;
+    border-left: 1px solid grey;
+    cursor: pointer;
+  }
+  &__right-list {
+    @include flex(center, center, row, 0);
+  }
+  &__right-item {
+    @include flex(center, center, row, 0);
+    padding-left: 1.5rem;
+  }
+  &__icon--padding {
+    padding: 0 0.5rem;
+  }
+}

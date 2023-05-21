@@ -1,0 +1,27 @@
+@use "../base/mixin" as *;
+@use "../base/variable" as *;
+@use "../base/base" as *;
+
+.profile-circle {
+  @include flex(center, center, row, 0);
+  @include circle(34px, 34px, #dfdfe7);
+  @include secondary-font-family(bold);
+  color: #c7c7d0;
+  cursor: pointer;
+}
+
+.circle {
+  @include circle(24px, 24px, #dfdfe7);
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.little-circle {
+  @include absolute(absolute, 0, 100%);
+  @include flex(center, center, row, 0);
+  @include circle(15px, 15px, white);
+  background-color: red;
+  color: white;
+  font-size: 0.75rem;
+}
